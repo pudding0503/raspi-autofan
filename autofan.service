@@ -1,0 +1,14 @@
+[Unit]
+Description=auto fan control
+After=syslog.target
+After=network.target
+
+[Service]
+RestartSec=2s
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/fan/
+ExecStart=/usr/bin/python3 /home/pi/fan/autofan.py
+
+[Install]
+WantedBy=multi-user.target
